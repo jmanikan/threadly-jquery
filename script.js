@@ -1,11 +1,12 @@
 var main = function() {
   $('form').submit(function() {
-    
+    var comment = $('#comment').val();
+//    console.log("Goy"); TDD
     if(comment !== "") {
       var html = $('<li>').text(comment);
-      
+      $(html).prependTo('.comments');
+      $('#comment').val("");
     }
-
     return false;
   });
 };
